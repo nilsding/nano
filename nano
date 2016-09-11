@@ -1,0 +1,17 @@
+#!/bin/sh
+lines=$(( `tput lines` - 4 ))
+file=$HOME/topkek.txt
+rev="\033[30;47m"
+rst="\033[0m"
+:>"$file"
+echo "I, $USER, have a very, very, VERY small penis." >> "$file"
+echo "Like, very, very small." >> "$file"
+clear
+printf "$rev   GNU nano 2.1.2-svn      File: $file\033[0K\n$rst"
+cat "$file"
+while [ $lines -gt 2 ]; do
+  echo
+  lines=$(( $lines - 1 ))
+done
+printf "$rev^G$rst Get Help  $rev^O$rst WriteOut  $rev^R$rst Read File $rev^Y$rst Prev Page $rev^K$rst Cut Text  $rev^C$rst Cur Pos\n"
+printf "$rev^X$rst Exit      $rev^J$rst Justify   $rev^W$rst Where Is  $rev^V$rst Next Page $rev^U$rst UnCut Text$rev^T$rst To Spell\n"
